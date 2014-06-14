@@ -3,7 +3,7 @@ Library    Selenium2Library
 Suite Teardown    Close Browser
 
 *** Variables ***
-${browser}  *chrome
+${GOOGLE URL}    https://google.com
 
 *** Testcases ***
 Search from google
@@ -12,7 +12,7 @@ Search from google
 
 *** Keywords ***
 ค้นหา robot
-  Open Browser    https://google.com
+  Open Browser    ${GOOGLE URL}
   Input Text    gbqfq     robot
   Click Button    gbqfb
 
