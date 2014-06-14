@@ -1,6 +1,7 @@
 *** Settings ***
 Library    Selenium2Library
 Suite Teardown    Close All Browsers
+Resource    keyword_library.txt
 
 *** Variables ***
 ${GOOGLE URL}    https://google.com

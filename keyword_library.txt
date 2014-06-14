@@ -1,0 +1,10 @@
+*** Keywords ***
+ค้นหา
+  [Arguments]    ${keyword}
+  Open Browser    ${GOOGLE URL}
+  Input Text    gbqfq     ${keyword}
+  Click Button    gbqfb
+
+เจอคำว่า
+  [Arguments]    ${expected result}
+  Wait Until Page Contains    ${expected result}
