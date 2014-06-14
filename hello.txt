@@ -6,15 +6,20 @@ Suite Teardown    Close All Browsers
 ${GOOGLE URL}    https://google.com
 
 *** Testcases ***
-Search robot
-  ค้นหา    robot
-  เจอคำว่า    robot
-
-Search robotframework
-  ค้นหา    robotframework
-  เจอคำว่า    robotframework
+Run search data from Google
+    [Template]    Flow ของการค้นหาข้อมูล
+    #--------------+-----------------#
+    #    Keyword   + Expected Result #
+    #--------------+-----------------#
+    robot           Robot
+    robotframework  robotframework
 
 *** Keywords ***
+Flow ของการค้นหาข้อมูล
+  [Arguments]    ${keyword}    ${expected result}
+  ค้นหา    ${keyword}
+  เจอคำว่า    ${keyword}
+
 ค้นหา
   [Arguments]    ${keyword}
   Open Browser    ${GOOGLE URL}
