@@ -3,9 +3,6 @@ Library    Selenium2Library
 Suite Teardown    Close All Browsers
 Resource    keyword_library.txt
 
-*** Variables ***
-${GOOGLE URL}    https://google.com
-
 *** Testcases ***
 Run search data from Google
     [Template]    Flow ของการค้นหาข้อมูล
@@ -20,13 +17,3 @@ Flow ของการค้นหาข้อมูล
   [Arguments]    ${keyword}    ${expected result}
   ค้นหา    ${keyword}
   เจอคำว่า    ${keyword}
-
-ค้นหา
-  [Arguments]    ${keyword}
-  Open Browser    ${GOOGLE URL}
-  Input Text    gbqfq     ${keyword}
-  Click Button    gbqfb
-
-เจอคำว่า
-  [Arguments]    ${expected result}
-  Wait Until Page Contains    ${expected result}

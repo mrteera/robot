@@ -1,3 +1,6 @@
+*** Variables ***
+${GOOGLE URL}    https://google.com
+
 *** Keywords ***
 ค้นหา
   [Arguments]    ${keyword}
